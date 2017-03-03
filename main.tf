@@ -55,3 +55,9 @@ data "aws_subnet" "app_eu_central_1b" {
 
   vpc_id = "${data.aws_vpc.vpc.id}"
 }
+
+data "aws_ami" "base_ami" {
+  most_recent = true
+  owners      = ["self"]
+  name_regex  = "dis-ami-base"
+}

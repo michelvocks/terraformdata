@@ -19,6 +19,10 @@ output "app_eu_central_1b_id" {
   value = "${data.aws_subnet.app_eu_central_1b.id}"
 }
 
+output "base_ami_id" {
+  value = "${data.aws_ami.base_ami.id}"
+}
+
 ##### CIDR outputs #####
 output "web_eu_central_1a_cidr" {
   value = "${data.aws_subnet.web_eu_central_1a.cidr_block}"
