@@ -19,6 +19,14 @@ output "app_eu_central_1b_id" {
   value = "${data.aws_subnet.app_eu_central_1b.id}"
 }
 
+output "db_eu_central_1a_id" {
+  value = "${data.aws_subnet.db_eu_central_1a.id}"
+}
+
+output "db_eu_central_1b_id" {
+  value = "${data.aws_subnet.db_eu_central_1b.id}"
+}
+
 output "base_ami_id" {
   value = "${data.aws_ami.base_ami.id}"
 }
