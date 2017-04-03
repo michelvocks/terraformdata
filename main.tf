@@ -3,7 +3,7 @@ data "aws_vpc" "vpc" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["topic"]}-${var.aws_tags["stagenew"]}-vpc",
+      "${var.aws_tags["topic"]}-${var.aws_tags["stage"]}-vpc",
     ]
   }
 }
