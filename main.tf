@@ -85,7 +85,7 @@ data "aws_subnet" "tools_eu_central_1a" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"]=="np"?"toolbox":"management"}-${var.aws_tags["stage"]}-sn-app-euc1a",
+      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_name : var.pr_tools_vpc_name}-${var.aws_tags["stage"]}-sn-app-euc1a",
     ]
   }
 
@@ -97,7 +97,7 @@ data "aws_subnet" "tools_eu_central_1b" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"]=="np"?"toolbox":"management"}-${var.aws_tags["stage"]}-sn-app-euc1b",
+      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_name : var.pr_tools_vpc_name}-${var.aws_tags["stage"]}-sn-app-euc1b",
     ]
   }
 
