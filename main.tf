@@ -80,7 +80,7 @@ data "aws_subnet" "db_eu_central_1b" {
   vpc_id = "${data.aws_vpc.vpc.id}"
 }
 
-data "aws_subnet" "jenkins_eu_central_1a" {
+data "aws_subnet" "tools_eu_central_1a" {
   filter {
     name = "tag:Name"
 
@@ -92,7 +92,7 @@ data "aws_subnet" "jenkins_eu_central_1a" {
   vpc_id = "${data.aws_vpc.vpc.id}"
 }
 
-data "aws_subnet" "jenkins_eu_central_1b" {
+data "aws_subnet" "tools_eu_central_1b" {
   filter {
     name = "tag:Name"
 
