@@ -80,6 +80,30 @@ data "aws_subnet" "db_eu_central_1b" {
   vpc_id = "${data.aws_vpc.vpc.id}"
 }
 
+data "aws_subnet" "jenkins_eu_central_1a" {
+  filter {
+    name = "tag:Name"
+
+    values = [
+      "${var.aws_tags["stage"]=="np"?"toolbox":"management"}-${var.aws_tags["stage"]}-sn-app-euc1a",
+    ]
+  }
+
+  vpc_id = "${data.aws_vpc.vpc.id}"
+}
+
+data "aws_subnet" "jenkins_eu_central_1b" {
+  filter {
+    name = "tag:Name"
+
+    values = [
+      "${var.aws_tags["stage"]=="np"?"toolbox":"management"}-${var.aws_tags["stage"]}-sn-app-euc1b",
+    ]
+  }
+
+  vpc_id = "${data.aws_vpc.vpc.id}"
+}
+
 data "aws_ami" "base_ami" {
   most_recent = true
   owners      = ["self"]
