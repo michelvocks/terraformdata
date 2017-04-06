@@ -8,6 +8,16 @@ data "aws_vpc" "vpc" {
   }
 }
 
+data "aws_vpc" "vpc_tools" {
+  filter {
+    name = "tag:Name"
+
+    values = [
+      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_name : var.pr_tools_vpc_name}-${var.aws_tags["stage"]}-vpc",
+    ]
+  }
+}
+
 data "aws_subnet" "web_eu_central_1a" {
   filter {
     name = "tag:Name"
@@ -89,7 +99,7 @@ data "aws_subnet" "tools_eu_central_1a" {
     ]
   }
 
-  vpc_id = "${data.aws_vpc.vpc.id}"
+  vpc_id = "${data.aws_vpc.vpc_tools.id}"
 }
 
 data "aws_subnet" "tools_eu_central_1b" {
@@ -101,7 +111,7 @@ data "aws_subnet" "tools_eu_central_1b" {
     ]
   }
 
-  vpc_id = "${data.aws_vpc.vpc.id}"
+  vpc_id = "${data.aws_vpc.vpc_tools.id}"
 }
 
 data "aws_ami" "base_ami" {
