@@ -13,7 +13,7 @@ data "aws_vpc" "vpc_tools" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_name : var.pr_tools_vpc_name}-${var.aws_tags["stage"]}-vpc",
+      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_stage : var.pr_tools_vpc_stage}-vpc",
     ]
   }
 }

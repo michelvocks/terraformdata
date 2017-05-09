@@ -10,3 +10,11 @@ variable "np_tools_vpc_name" {
 variable "pr_tools_vpc_name" {
   default = "management"
 }
+
+variable "np_tools_vpc_stage" {
+  default = "toolbox-np"
+}
+
+variable "pr_tools_vpc_stage" {
+  default = "management-prod"
+}
