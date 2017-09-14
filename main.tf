@@ -2,10 +2,7 @@ data "aws_vpc" "vpc" {
   filter {
     name = "tag:Name"
 
-    //${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_subnets : var.pr_tools_vpc_subnets}-sn-web-euc1a
-    values = [
-      "${var.aws_tags["topic"] == "management" ? "management-prod-vpc" : "${var.aws_tags["topic"]}-${var.aws_tags["stage"]}-vpc"}"
-    ]
+    values = ["${var.aws_tags["topic"]}-${var.aws_tags["stage"]}-vpc"]
   }
 }
 
