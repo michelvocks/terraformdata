@@ -16,7 +16,7 @@ variable "np_tools_vpc_stage" {
 }
 
 variable "pr_tools_vpc_stage" {
-  default = "management-prod"
+  default = "management-pr"
 }
 
 variable "np_tools_vpc_subnets" {
