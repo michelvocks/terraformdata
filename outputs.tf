@@ -60,7 +60,7 @@ output "elb_eu_central_1b_cidr" {
   value = "${data.aws_subnet.elb_eu_central_1b.cidr_block}"
 }
 
-output "elb_app_eu_central_1a_cidr" {
+output "elb_eu_central_1a_cidr" {
   value = "${data.aws_subnet.elb_eu_central_1a.cidr_block}"
 }
 
