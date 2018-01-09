@@ -13,7 +13,7 @@ data "aws_vpc" "vpc_tools" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_stage : var.pr_tools_vpc_stage}-vpc",
+      "${var.aws_tags["stage"] == "pr" ? var.pr_tools_vpc_stage : var.pr_tools_vpc_stage}-vpc",
     ]
   }
 }
@@ -119,7 +119,7 @@ data "aws_subnet" "tools_app_eu_central_1a" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_stage : var.pr_tools_vpc_stage}-sn-app-euc1a",
+      "${var.aws_tags["stage"] == "pr" ? var.pr_tools_vpc_stage : var.np_tools_vpc_stage}-sn-app-euc1a",
     ]
   }
 
@@ -131,7 +131,7 @@ data "aws_subnet" "tools_app_eu_central_1b" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_stage : var.pr_tools_vpc_stage}-sn-app-euc1b",
+      "${var.aws_tags["stage"] == "pr" ? var.pr_tools_vpc_stage : var.np_tools_vpc_stage}-sn-app-euc1b",
     ]
   }
 
@@ -143,7 +143,7 @@ data "aws_subnet" "tools_web_eu_central_1a" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_stage : var.pr_tools_vpc_stage}-sn-web-euc1a",
+      "${var.aws_tags["stage"] == "pr" ? var.pr_tools_vpc_stage : var.np_tools_vpc_stage}-sn-web-euc1a",
     ]
   }
 
@@ -155,7 +155,7 @@ data "aws_subnet" "tools_web_eu_central_1b" {
     name = "tag:Name"
 
     values = [
-      "${var.aws_tags["stage"] == "np" ? var.np_tools_vpc_stage : var.pr_tools_vpc_stage}-sn-web-euc1b",
+      "${var.aws_tags["stage"] == "pr" ? var.pr_tools_vpc_stage : var.np_tools_vpc_stage}-sn-web-euc1b",
     ]
   }
 
