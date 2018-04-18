@@ -56,6 +56,14 @@ output "app_eu_central_1b_cidr" {
   value = "${data.aws_subnet.app_eu_central_1b.cidr_block}"
 }
 
+output "db_eu_central_1a_cidr" {
+  value = "${data.aws_subnet.db_eu_central_1a.cidr_block}"
+}
+
+output "db_eu_central_1b_cidr" {
+  value = "${data.aws_subnet.db_eu_central_1b.cidr_block}"
+}
+
 output "elb_eu_central_1b_cidr" {
   value = "${data.aws_subnet.elb_eu_central_1b.cidr_block}"
 }
