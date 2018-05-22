@@ -163,5 +163,5 @@ data "aws_subnet" "tools_web_eu_central_1b" {
 data "aws_ami" "base_ami" {
   most_recent = true
   owners      = ["self"]
-  name_regex  = "dis-ami-base"
+  name_regex  = "dis-ami-base$"
 }
